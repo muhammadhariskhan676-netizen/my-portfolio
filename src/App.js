@@ -2,11 +2,12 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {
   Menu, X, Mail, Phone, MapPin, Github, Linkedin,
   Download, ExternalLink, Code, Briefcase, GraduationCap,
-  Heart, Settings,LogOut, Edit2, Trash2,
+  Heart, Settings, LogIn, LogOut, Edit2, Trash2,
   Save, Eye, Upload, FileText, CheckCircle, AlertCircle, Lock, User, KeyRound, Shield
 } from 'lucide-react';
 
-const API = 'https://portfolio-backend-production-ceaa.up.railway.app/api';
+const API = 'http://localhost:5000/api';
+
 function Toast({ message, type, onClose }) {
   useEffect(() => {
     const t = setTimeout(onClose, 3500);
@@ -25,6 +26,8 @@ function Toast({ message, type, onClose }) {
 function CVModal({ onClose }) {
   const cvViewUrl = `${API}/cv/view`;
   const cvDownloadUrl = `${API}/cv/download`;
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
   return (
     <div className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
       <div className="bg-slate-900 border border-purple-500/30 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl">
@@ -38,11 +41,36 @@ function CVModal({ onClose }) {
               className="flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold hover:shadow-lg transition-all text-sm">
               <Download size={16} /> Download CV
             </a>
+            <a href={cvViewUrl} target="_blank" rel="noreferrer"
+              className="flex items-center gap-2 px-4 py-2 bg-purple-500/20 border border-purple-500/30 text-purple-300 rounded-full text-sm hover:bg-purple-500/30 transition-all">
+              <ExternalLink size={14} /> Open
+            </a>
             <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors"><X size={24} /></button>
           </div>
         </div>
         <div className="flex-1 overflow-hidden rounded-b-2xl">
-          <iframe src={cvViewUrl} className="w-full h-[75vh]" title="CV Preview" />
+          {isMobile ? (
+            <div className="flex flex-col items-center justify-center h-[60vh] gap-6 p-8 text-center">
+              <FileText className="text-purple-400" size={64} />
+              <p className="text-gray-300 text-lg">Mobile pe PDF preview available nahi hai</p>
+              <div className="flex flex-col gap-3 w-full max-w-xs">
+                <a href={cvViewUrl} target="_blank" rel="noreferrer"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold">
+                  <Eye size={18} /> View CV
+                </a>
+                <a href={cvDownloadUrl}
+                  className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-purple-400 text-purple-400 rounded-full font-semibold">
+                  <Download size={18} /> Download CV
+                </a>
+              </div>
+            </div>
+          ) : (
+            <iframe
+              src={`https://docs.google.com/viewer?url=${encodeURIComponent(cvViewUrl)}&embedded=true`}
+              className="w-full h-[75vh]"
+              title="CV Preview"
+            />
+          )}
         </div>
       </div>
     </div>
