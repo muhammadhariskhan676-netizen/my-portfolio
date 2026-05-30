@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {
   Menu, X, Mail, Phone, MapPin, Github, Linkedin,
   Download, ExternalLink, Code, Briefcase, GraduationCap,
-  Heart, Settings, LogOut, Edit2, Trash2,
+  Heart, Settings, LogIn,LogOut, Edit2, Trash2,
   Save, Eye, Upload, FileText, CheckCircle, AlertCircle, Lock, User, KeyRound, Shield
 } from 'lucide-react';
 
