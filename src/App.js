@@ -54,7 +54,7 @@ function CVModal({ onClose }) {
               <FileText className="text-purple-400" size={64} />
               <p className="text-gray-300 text-lg">Mobile pe PDF preview available nahi hai</p>
               <div className="flex flex-col gap-3 w-full max-w-xs">
-                <a href={cvViewUrl} target="_blank" rel="noreferrer"
+                <a href={`https://docs.google.com/viewer?url=${encodeURIComponent(cvViewUrl)}&embedded=true`} target="_blank" rel="noreferrer"
                   className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold">
                   <Eye size={18} /> View CV
                 </a>
@@ -863,7 +863,7 @@ export default function Portfolio() {
                     ? `http://localhost:5000${personalInfo.image}?t=${Date.now()}`
                     : personalInfo?.image}
                   alt={personalInfo?.name}
-                  className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover object-[center_top] border-4 border-purple-400 shadow-2xl"
+                  className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover object-[center_20%] border-4 border-purple-400 shadow-2xl"
                   onError={e => { e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(personalInfo?.name||'H')}&background=7c3aed&color=fff&size=320`; }}
                 />
               </div>
