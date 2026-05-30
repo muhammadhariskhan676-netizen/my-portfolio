@@ -871,17 +871,43 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ── ABOUT SECTION ── */}
-     <section id="about" className="py-20 px-4 bg-slate-800/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">About Me</h2>
-          <p className="text-gray-300 text-lg leading-relaxed">
-            I am Muhammad Haris Khan, a passionate Software Engineer currently studying at the University of Mianwali. 
-            I am in my 6th semester with a CGPA of 3.25. I specialize in MERN Stack development and love building 
-            beautiful, functional web applications. I am always eager to learn new technologies and take on challenging projects.
-          </p>
+   {/* ── ABOUT SECTION ── */}
+<section id="about" className="py-20 px-4 bg-slate-800/30">
+  <div className="max-w-4xl mx-auto text-center">
+    <h2 className="text-4xl font-bold text-white mb-4 text-center">About Me</h2>
+    <div className="w-12 h-1 bg-purple-500 rounded-full mx-auto mb-8"></div>
+
+    <p className="text-gray-300 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+      I'm <span className="text-purple-400 font-semibold">Muhammad Haris Khan</span>, a passionate Software Engineer
+      studying at the <span className="text-purple-400 font-semibold">University of Mianwali</span>. I specialize in{' '}
+      <span className="text-purple-400 font-semibold">MERN Stack</span> development and love building beautiful,
+      functional web applications. Always eager to learn new technologies and take on challenging projects.
+    </p>
+
+    {/* Stats */}
+    <div className="grid grid-cols-3 gap-6 mb-10 max-w-lg mx-auto">
+      {[
+        { num: '6th', label: 'Current Semester' },
+        { num: '3.25', label: 'CGPA' },
+        { num: 'MERN', label: 'Specialization' },
+      ].map((s, i) => (
+        <div key={i} className="bg-slate-700/50 border border-purple-500/20 rounded-xl p-4">
+          <p className="text-2xl font-bold text-purple-400">{s.num}</p>
+          <p className="text-xs text-gray-400 mt-1">{s.label}</p>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* Tags */}
+    <div className="flex flex-wrap gap-3 justify-center">
+      {['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Full Stack'].map((tag, i) => (
+        <span key={i} className="px-4 py-2 bg-purple-500/20 border border-purple-400/30 text-purple-300 rounded-full text-sm font-semibold">
+          {tag}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ── EDUCATION SECTION ── */}
       <section id="education" className="py-20 px-4">
