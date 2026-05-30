@@ -2,12 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {
   Menu, X, Mail, Phone, MapPin, Github, Linkedin,
   Download, ExternalLink, Code, Briefcase, GraduationCap,
-  Heart, Settings, LogIn,LogOut, Edit2, Trash2,
+  Heart, Settings,LogOut, Edit2, Trash2,
   Save, Eye, Upload, FileText, CheckCircle, AlertCircle, Lock, User, KeyRound, Shield
 } from 'lucide-react';
 
-const API = 'http://localhost:5000/api';
-
+const API = 'https://portfolio-backend-production-ceaa.up.railway.app/api';
 function Toast({ message, type, onClose }) {
   useEffect(() => {
     const t = setTimeout(onClose, 3500);
