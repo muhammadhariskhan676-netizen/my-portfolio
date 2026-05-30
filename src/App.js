@@ -872,22 +872,14 @@ export default function Portfolio() {
       </section>
 
       {/* ── ABOUT SECTION ── */}
-      <section id="about" className="py-20 px-4 bg-slate-800/30">
-        <div className="max-w-7xl mx-auto">
+     <section id="about" className="py-20 px-4 bg-slate-800/30">
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">About Me</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: <Mail className="text-purple-400 mb-4" size={32} />, label: 'Email', value: personalInfo?.email },
-              { icon: <Phone className="text-purple-400 mb-4" size={32} />, label: 'Phone', value: personalInfo?.phone },
-              { icon: <MapPin className="text-purple-400 mb-4" size={32} />, label: 'Location', value: personalInfo?.location },
-            ].map((item, i) => (
-              <div key={i} className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/20 hover:border-purple-500/50 transition-all">
-                {item.icon}
-                <h3 className="text-xl font-semibold text-white mb-2">{item.label}</h3>
-                <p className="text-gray-300">{item.value}</p>
-              </div>
-            ))}
-          </div>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            I am Muhammad Haris Khan, a passionate Software Engineer currently studying at the University of Mianwali. 
+            I am in my 6th semester with a CGPA of 3.25. I specialize in MERN Stack development and love building 
+            beautiful, functional web applications. I am always eager to learn new technologies and take on challenging projects.
+          </p>
         </div>
       </section>
 
@@ -972,24 +964,17 @@ export default function Portfolio() {
       </section>
 
       {/* ── CONTACT SECTION ── */}
-      <section id="contact" className="py-20 px-4 bg-slate-800/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Let's Work Together</h2>
+      <h2 className="text-4xl font-bold text-white mb-6">Let's Work Together</h2>
           <p className="text-gray-300 text-lg mb-8">I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+          <div className="flex flex-wrap gap-6 justify-center mb-8">
+            <div className="flex items-center gap-2 text-gray-300"><Mail className="text-purple-400" size={20} />{personalInfo?.email}</div>
+            <div className="flex items-center gap-2 text-gray-300"><Phone className="text-purple-400" size={20} />{personalInfo?.phone}</div>
+            <div className="flex items-center gap-2 text-gray-300"><MapPin className="text-purple-400" size={20} />{personalInfo?.location}</div>
+          </div>
           <div className="flex flex-wrap gap-4 justify-center mb-8">
             <a href={`mailto:${personalInfo?.email}`} className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold hover:shadow-lg transition-all flex items-center gap-2">
               <Mail size={20} /> Send Email
             </a>
-            {personalInfo?.github && <a href={personalInfo.github} target="_blank" rel="noreferrer" className="px-8 py-3 border-2 border-purple-400 text-purple-400 rounded-full font-semibold hover:bg-purple-400 hover:text-white transition-all flex items-center gap-2">
-              <Github size={20} /> GitHub
-            </a>}
-            {personalInfo?.linkedin && <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="px-8 py-3 border-2 border-purple-400 text-purple-400 rounded-full font-semibold hover:bg-purple-400 hover:text-white transition-all flex items-center gap-2">
-              <Linkedin size={20} /> LinkedIn
-            </a>}
-          </div>
-        </div>
-      </section>
-
       {/* ── FOOTER ── */}
       <footer className="bg-slate-900 py-8 px-4 border-t border-purple-500/20">
         <div className="max-w-7xl mx-auto text-center">
