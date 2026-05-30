@@ -862,7 +862,7 @@ export default function Portfolio() {
                     ? `http://localhost:5000${personalInfo.image}?t=${Date.now()}`
                     : personalInfo?.image}
                   alt={personalInfo?.name}
-                  className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover object-[center_top] border-4 border-purple-400 shadow-2xl"
+                  className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover object-top border-4 border-purple-400 shadow-2xl"
                   onError={e => { e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(personalInfo?.name||'H')}&background=7c3aed&color=fff&size=320`; }}
                 />
               </div>
