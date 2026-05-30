@@ -898,14 +898,7 @@ export default function Portfolio() {
       ))}
     </div>
 
-    {/* Tags */}
-    <div className="flex flex-wrap gap-3 justify-center">
-      {['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Full Stack'].map((tag, i) => (
-        <span key={i} className="px-4 py-2 bg-purple-500/20 border border-purple-400/30 text-purple-300 rounded-full text-sm font-semibold">
-          {tag}
-        </span>
-      ))}
-    </div>
+ 
   </div>
 </section>
 
